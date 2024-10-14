@@ -1,0 +1,91 @@
+.container {
+    padding: 20px;
+    color: white; /* Default text color */
+    background-color: #121212; /* Dark background for the container */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Subtle shadow */
+}
+
+.tabs {
+    display: flex;
+    justify-content: center; /* Center align tabs */
+    margin-bottom: 20px;
+}
+
+.tabButton {
+    padding: 12px 24px;
+    margin: 0 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #1f1f1f; /* Dark button background */
+    color: #ffcc00; /* Gold text for buttons */
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.tabButton:hover {
+    background-color: #ffcc00; /* Hover background color */
+    color: #121212; /* Change text color on hover */
+    transform: scale(1.05); /* Slightly enlarge button on hover */
+}
+
+.active {
+    background-color: #ffcc00; /* Active tab background */
+    color: #121212; /* Active tab text color */
+    transform: scale(1.05); /* Slightly enlarge active tab */
+}
+.myShiftsContainer {
+    padding: 10px;
+}
+
+.shiftItem {
+    padding: 10px;
+    border-bottom: 1px solid #333; /* Divider between shifts */
+}
+
+.shiftItem:last-child {
+    border-bottom: none; /* Remove border for the last item */
+}
+
+.cancelButton {
+    padding: 5px 15px;
+    background-color: #ff4d4d; /* Red color for cancel button */
+    color: white; /* Button text color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.cancelButton:hover {
+    background-color: #cc0000; /* Darker red on hover */
+    transform: scale(1.05); /* Slightly enlarge button on hover */
+}
+.availableShiftsContainer {
+    padding: 10px;
+}
+
+.shiftItem {
+    padding: 10px;
+    border-bottom: 1px solid #333; /* Divider between shifts */
+}
+
+.shiftItem:last-child {
+    border-bottom: none; /* Remove border for the last item */
+}
+
+.bookButton {
+    padding: 5px 15px;
+    background-color: #0070f3; /* Button color for booking */
+    color: white; /* Button text color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.bookButton:hover {
+    background-color: #005bb5; /* Darker blue on hover */
+    transform: scale(1.05); /* Slightly enlarge button on hover */
+}
