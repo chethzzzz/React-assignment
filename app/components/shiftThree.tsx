@@ -2,18 +2,16 @@
 import React from 'react';
 import styles from '../styles/shifts.module.css';
 
-// Define the Shift interface
 interface Shift {
     date: string;
     time: string;
-    location: string;
+
 }
 
-const AvailableShiftsTab3: React.FC = () => {
-    // Use the Shift interface for the shifts array
+const AvailableShiftsTab3 = () => {
     const shifts: Shift[] = [
-        { date: '2024-10-22', time: '10:00 AM', location: 'City E' },
-        { date: '2024-10-23', time: '01:00 PM', location: 'City F' },
+        { date: '2024-10-22', time: '10:00 AM', },
+        { date: '2024-10-23', time: '01:00 PM',  },
     ];
 
     const handleBook = (shift: Shift) => {
@@ -21,13 +19,20 @@ const AvailableShiftsTab3: React.FC = () => {
     };
 
     return (
-        <div>
+        <div className={styles.group}>
             <h3>Available Shifts - Tab 3</h3>
-            <ul>
+            <ul className={styles.shiftList}>
                 {shifts.map((shift, index) => (
-                    <li key={index}>
-                        {shift.date} - {shift.time} - {shift.location}
-                        <button onClick={() => handleBook(shift)}>Book</button>
+                    <li key={index} className={styles.shiftItem}>
+                        <span>
+                            {shift.date} - {shift.time} 
+                        </span>
+                        <button 
+                            className={styles.bookButton} 
+                            onClick={() => handleBook(shift)}
+                        >
+                            Book
+                        </button>
                     </li>
                 ))}
             </ul>

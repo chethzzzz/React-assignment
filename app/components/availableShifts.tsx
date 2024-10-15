@@ -3,12 +3,12 @@ import React, { useState } from 'react';
 import AvailableShiftsTab1 from './shiftOne';
 import AvailableShiftsTab2 from './shiftTwo';
 import AvailableShiftsTab3 from './shiftThree';
-import styles from '../styles/shifts.module.css'
+import styles from '../styles/shifts.module.css';
 
-const AvailableShifts: React.FC = () => {
-    const [activeTab, setActiveTab] = useState<number>(1); // Type for activeTab
+const AvailableShifts = () => {
+    const [activeTab, setActiveTab] = useState(1);
 
-    const handleTabChange = (tab: number) => { // Explicitly typing tab as number
+    const handleTabChange = (tab: number) => {
         setActiveTab(tab);
     };
 
@@ -16,9 +16,24 @@ const AvailableShifts: React.FC = () => {
         <div className={styles.container}>
             <h2>Available Shifts</h2>
             <div className={styles.tabs}>
-                <button onClick={() => handleTabChange(1)}>Tab 1</button>
-                <button onClick={() => handleTabChange(2)}>Tab 2</button>
-                <button onClick={() => handleTabChange(3)}>Tab 3</button>
+                <button
+                    className={`${styles.tabButton} ${activeTab === 1 ? styles.active : ''}`}
+                    onClick={() => handleTabChange(1)}
+                >
+                    Helsinki
+                </button>
+                <button
+                    className={`${styles.tabButton} ${activeTab === 2 ? styles.active : ''}`}
+                    onClick={() => handleTabChange(2)}
+                >
+                    Nairobi
+                </button>
+                <button
+                    className={`${styles.tabButton} ${activeTab === 3 ? styles.active : ''}`}
+                    onClick={() => handleTabChange(3)}
+                >
+                    Tokyo
+                </button>
             </div>
             {activeTab === 1 && <AvailableShiftsTab1 />}
             {activeTab === 2 && <AvailableShiftsTab2 />}
@@ -28,4 +43,3 @@ const AvailableShifts: React.FC = () => {
 };
 
 export default AvailableShifts;
-

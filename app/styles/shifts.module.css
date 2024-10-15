@@ -1,91 +1,139 @@
+/* General container styling */
 .container {
     padding: 20px;
-    color: white; /* Default text color */
-    background-color: #121212; /* Dark background for the container */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Subtle shadow */
+    color: white;
+    background-color: #121212;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 600px;
+    margin: auto;
 }
 
+/* Tabs layout */
 .tabs {
     display: flex;
-    justify-content: center; /* Center align tabs */
-    margin-bottom: 20px;
+    justify-content: space-around;
+    border-bottom: 1px solid #333;
+    margin-bottom: 15px;
 }
 
 .tabButton {
-    padding: 12px 24px;
-    margin: 0 10px;
+    padding: 12px 20px;
     cursor: pointer;
     border: none;
+    background: transparent;
+    color: #ccc;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: color 0.3s, border-bottom 0.3s;
+}
+
+.tabButton:hover,
+.active {
+    color: #ffcc00;
+    border-bottom: 2px solid #ffcc00;
+}
+
+/* Grouped shifts section */
+.group {
+    margin-bottom: 20px;
+}
+
+.group h3 {
+    margin: 10px 0;
+    color: #ffcc00;
+}
+
+/* Shift List Styling */
+.shiftList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.shiftItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    border-bottom: 1px solid #333;
+}
+
+.shiftItem:last-child {
+    border-bottom: none;
+}
+
+/* Book Button Styling */
+.bookButton {
+    padding: 8px 15px;
+    background-color: #0070f3;
+    color: white;
+    border: none;
     border-radius: 5px;
-    background-color: #1f1f1f; /* Dark button background */
-    color: #ffcc00; /* Gold text for buttons */
+    cursor: pointer;
     font-weight: bold;
     transition: background-color 0.3s, transform 0.2s;
 }
 
-.tabButton:hover {
-    background-color: #ffcc00; /* Hover background color */
-    color: #121212; /* Change text color on hover */
-    transform: scale(1.05); /* Slightly enlarge button on hover */
-}
-
-.active {
-    background-color: #ffcc00; /* Active tab background */
-    color: #121212; /* Active tab text color */
-    transform: scale(1.05); /* Slightly enlarge active tab */
-}
-.myShiftsContainer {
-    padding: 10px;
-}
-
-.shiftItem {
-    padding: 10px;
-    border-bottom: 1px solid #333; /* Divider between shifts */
-}
-
-.shiftItem:last-child {
-    border-bottom: none; /* Remove border for the last item */
+.bookButton:hover {
+    background-color: #005bb5;
+    transform: scale(1.05);
 }
 
 .cancelButton {
-    padding: 5px 15px;
-    background-color: #ff4d4d; /* Red color for cancel button */
-    color: white; /* Button text color */
+    padding: 8px 15px;
+    background-color: #ff4d4d;
+    color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-weight: bold;
     transition: background-color 0.3s, transform 0.2s;
 }
 
 .cancelButton:hover {
-    background-color: #cc0000; /* Darker red on hover */
-    transform: scale(1.05); /* Slightly enlarge button on hover */
+    background-color: #cc0000;
+    transform: scale(1.05);
 }
-.availableShiftsContainer {
+
+.input {
     padding: 10px;
-}
-
-.shiftItem {
-    padding: 10px;
-    border-bottom: 1px solid #333; /* Divider between shifts */
-}
-
-.shiftItem:last-child {
-    border-bottom: none; /* Remove border for the last item */
-}
-
-.bookButton {
-    padding: 5px 15px;
-    background-color: #0070f3; /* Button color for booking */
-    color: white; /* Button text color */
-    border: none;
+    border: 1px solid #333;
     border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
+    margin-bottom: 15px;
+    color: white;
+    background-color: #1f1f1f;
 }
 
-.bookButton:hover {
-    background-color: #005bb5; /* Darker blue on hover */
-    transform: scale(1.05); /* Slightly enlarge button on hover */
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+        max-width: 90%; /* Adjust width for mobile */
+    }
+
+    .tabButton {
+        padding: 10px 15px; /* Smaller padding */
+        font-size: 0.9rem; /* Slightly smaller font */
+    }
+
+    .shiftItem {
+        flex-direction: column; /* Stack items for better layout */
+        align-items: flex-start; /* Align items to the start */
+        padding: 10px; /* Adjust padding */
+        gap:20px;
+    }
+
+    .bookButton,
+    .cancelButton {
+        width: 100%; /* Full width buttons on mobile */
+        margin-top: 5px; /* Add margin for spacing */
+    }
+
+    .input {
+        width: 100%; /* Full width input on mobile */
+    }
 }
