@@ -20,7 +20,7 @@ const AvailableShiftsTab3 = () => {
 
     return (
         <div className={styles.group}>
-            <h3>Available Shifts - Tab 3</h3>
+            <h3>Available Shifts</h3>
             <ul className={styles.shiftList}>
                 {shifts.map((shift, index) => (
                     <li key={index} className={styles.shiftItem}>
